@@ -1,6 +1,6 @@
 <?php
 require('dbconnect.php');
-require('auth.php');
+
 require('components/header.php');
 if ($_SESSION['username']){
     if ($_POST['title']){
