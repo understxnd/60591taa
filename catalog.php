@@ -1,16 +1,22 @@
 <?php
+require('auth.php');
 require('products_db.php');
 require('dbconnect.php');
-$limit = 4;
+
+$limit = 6;
 $page = intval($_GET['page']) ?: 1;
 $offset = ($page - 1) * $limit;
 //Запрос для получения количества записей в таблице
 $result = $conn->query("SELECT count(*) AS C FROM products");
 $row = $result->fetch();
 $products_quantity = $row['C'];
-//Запрос для получения записей из таблицы
+
 $result = $conn->query("SELECT * FROM products LIMIT ".$limit." OFFSET ".$offset);
 
+//$products = get_products();
+
+
+//$products_on_page = array_slice($products, $offset, $limit, true);
 $pages = $products_quantity / $limit;
 $pages_total = ceil($pages);
 
@@ -22,7 +28,8 @@ $year = date('Y');
 
 $today = $day . $months[$month] . $year;
 
+
 require('components/header.php');
 require('components/products_list.php');
-
+//require('products_list_db.php');
 require('components/footer.php');

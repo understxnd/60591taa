@@ -107,6 +107,26 @@ a {
   font-weight: 400;
 }
 
+
+.order-list li {
+  display: inline;
+}
+
+.order-card {
+  position: relative;
+
+  display: flex;
+  width: 132px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  padding: 124px 12px 12px;
+
+  flex-direction: column;
+
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 .products-list {
   display: flex;
   padding: 20px 0 0;
@@ -418,7 +438,8 @@ span.price:empty::after {
   line-height: 22px;
   text-align: center;
 }
-input, textarea, select{
+
+input, textarea, select {
   display: flex;
   padding: 8px 16px;
   margin: 0 10px 10px 0;
